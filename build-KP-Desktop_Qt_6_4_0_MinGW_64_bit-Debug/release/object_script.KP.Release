@@ -1,0 +1,16 @@
+release/addadmin.o
+release/addinfo.o
+release/daftarkp.o
+release/editinfo.o
+release/home.o
+release/main.o
+release/mainwindow.o
+release/regist.o
+release/qrc_qmake_qmake_qm_files.o
+release/moc_addadmin.o
+release/moc_addinfo.o
+release/moc_daftarkp.o
+release/moc_editinfo.o
+release/moc_home.o
+release/moc_mainwindow.o
+release/moc_regist.o
