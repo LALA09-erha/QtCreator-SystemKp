@@ -223,6 +223,7 @@ void Home::on_awal_tabBarClicked(int index)
             if(q.next()){
 
                 ui->username_user->setText(user);
+                ui->username_user->setReadOnly(true);
                 ui->password_user->setText(q.value(1).toString());
             }
 
@@ -782,6 +783,7 @@ void Home::on_awal_currentChanged(int index)
             if(q.next()){
 
                 ui->username_user->setText(user);
+                ui->username_user->setReadOnly(true);
                 ui->password_user->setText(q.value(1).toString());
 
             }
