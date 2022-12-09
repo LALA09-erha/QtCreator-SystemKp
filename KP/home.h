@@ -7,6 +7,11 @@
 #include "addinfo.h"
 #include "addadmin.h"
 #include "daftarkp.h"
+#include "mainwindow.h"
+#include "uploadlink.h"
+#include "addnilai.h"
+#include <QList>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Home; }
@@ -58,10 +63,21 @@ private slots:
 
     void on_tombolAwal_clicked();
 
+    void on_logout_clicked();
+
+    void on_uploadlink_clicked();
+
+    void on_carimahasiswa_textChanged(const QString &arg1);
+
+    void on_nilaimahasiswa_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::Home *ui;
     QString user;
     QSqlDatabase db;
+    QMainWindow *main;
+    QList<QString> nilai;
+
 
 };
 

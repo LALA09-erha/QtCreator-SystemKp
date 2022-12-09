@@ -11,30 +11,36 @@ CONFIG += c++17
 SOURCES += \
     addadmin.cpp \
     addinfo.cpp \
+    addnilai.cpp \
     daftarkp.cpp \
     editinfo.cpp \
     home.cpp \
     main.cpp \
     mainwindow.cpp \
-    regist.cpp
+    regist.cpp \
+    uploadlink.cpp
 
 HEADERS += \
     addadmin.h \
     addinfo.h \
+    addnilai.h \
     daftarkp.h \
     editinfo.h \
     home.h \
     mainwindow.h \
-    regist.h
+    regist.h \
+    uploadlink.h
 
 FORMS += \
     addadmin.ui \
     addinfo.ui \
+    addnilai.ui \
     daftarkp.ui \
     editinfo.ui \
     home.ui \
     mainwindow.ui \
-    regist.ui
+    regist.ui \
+    uploadlink.ui
 
 TRANSLATIONS += \
     KP_id_ID.ts

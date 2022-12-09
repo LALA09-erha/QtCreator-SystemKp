@@ -41,8 +41,10 @@ void Home::setData(const QString &labelText){
                 if(q.value(1).toString()==""){
                     ui->pengumuman->setText("Harap Melengkapi Data Diri Pada Profile Terlebih Dahulu");
                     ui->tombolAwal->setEnabled(false);
+                    ui->uploadlink->setHidden(true);
                 }else{
                     ui->pengumuman->setHidden(true);
+                    ui->uploadlink->setHidden(true);
                 }
 
             }
@@ -53,9 +55,11 @@ void Home::setData(const QString &labelText){
 
                 if((q.value(8).toString() >= "01/7/"+year) && (q.value(8).toString() <= "31/12/"+year) ){
                     ui->tombolAwal->setText("Cetak");
+                    ui->uploadlink->setHidden(false);
 //                    qDebug() << "truee";
                 }else if((q.value(8).toString() >= "0/1/"+year) && (q.value(8).toString() <= "30/6/"+year)){
                     ui->tombolAwal->setText("Cetak");
+                    ui->uploadlink->setHidden(false);
 //                    qDebug() << "trueee";
                 }else{
 //                    qDebug() << "true";
@@ -64,9 +68,10 @@ void Home::setData(const QString &labelText){
 //                    qDebug() << (q.value(8).toString() <= "31/12/"+year);
 //                    qDebug() << (q.value(8).toString() >= "01/7/"+year);
                     ui->tombolAwal->setText("Daftar KP");
+                    ui->uploadlink->setHidden(true);
                 }
             }else{
-
+                ui->uploadlink->setHidden(true);
                 ui->tombolAwal->setText("Daftar KP");
             }
         }
@@ -90,12 +95,17 @@ void Home::setData(const QString &labelText){
                 ui->awal->setTabEnabled(2,false);
                 ui->awal->setTabVisible(3,false);
                 ui->awal->setTabEnabled(3,false);
+                ui->pengumuman->setText("Anda Masuk Sebagai Admin");
+                ui->tombolAwal->setText("Anda Admin");
+                ui->tombolAwal->setEnabled(false);
             }
         }else{
              ui->awal->setTabVisible(4,false);
              ui->awal->setTabEnabled(4,false);
              ui->awal->setTabEnabled(5,false);
              ui->awal->setTabVisible(5,false);
+             ui->awal->setTabEnabled(6,false);
+             ui->awal->setTabVisible(6,false);
         }
     }else{
         qDebug() << "close";
@@ -144,7 +154,9 @@ void Home::on_awal_tabBarClicked(int index)
                     if(q.value(1).toString()==""){
                         ui->pengumuman->setText("Harap Melengkapi Data Diri Pada Profile Terlebih Dahulu");
                         ui->tombolAwal->setEnabled(false);
+                        ui->uploadlink->setHidden(true);
                     }else{
+                        ui->uploadlink->setHidden(true);
                         ui->pengumuman->setHidden(true);
                     }
 
@@ -156,9 +168,11 @@ void Home::on_awal_tabBarClicked(int index)
 
                     if((q.value(8).toString() >= "01/7/"+year) && (q.value(8).toString() <= "31/12/"+year) ){
                         ui->tombolAwal->setText("Cetak");
+                        ui->uploadlink->setHidden(false);
     //                    qDebug() << "truee";
                     }else if((q.value(8).toString() >= "0/1/"+year) && (q.value(8).toString() <= "30/6/"+year)){
                         ui->tombolAwal->setText("Cetak");
+                        ui->uploadlink->setHidden(false);
     //                    qDebug() << "trueee";
                     }else{
     //                    qDebug() << "true";
@@ -168,10 +182,15 @@ void Home::on_awal_tabBarClicked(int index)
     //                    qDebug() << (q.value(8).toString() >= "01/7/"+year);
                         ui->tombolAwal->setText("Daftar KP");
                         ui->tombolAwal->setEnabled(true);
+                        ui->uploadlink->setHidden(true);
                     }
                 }else{
-                    ui->tombolAwal->setEnabled(true);
+//                    ui->tombolAwal->setEnabled(false);
+//                    ui->uploadlink->setHidden(true);
+//                    ui->tombolAwal->setText("Anda Admin");
                     ui->tombolAwal->setText("Daftar KP");
+                    ui->tombolAwal->setEnabled(true);
+                    ui->uploadlink->setHidden(true);
                 }
             }
         }
@@ -237,6 +256,22 @@ void Home::on_awal_tabBarClicked(int index)
                 ui->sks->setValue(q.value(3).toInt());
 
             }
+
+            if(q.exec("select * from surat where nim='"+user+"'")){
+                int j = 0;
+//                qDebug() << q.next();
+                while(q.next()){
+                    if(!nilai.contains(q.value(8).toString())){
+                        nilai.append(q.value(8).toString());
+                        ui->nilainilai->addItem(q.value(8).toString() +" | "+ q.value(10).toString());
+                    }
+                    j++;
+                }
+                if(j==0){
+                    ui->nilainilai->addItem("Anda Belum Mempunyai Riwayat Nilai");
+                    ui->nilainilai->setDisabled(true);
+                }
+            }
             ui->save->setDisabled(true);
 
         }
@@ -251,6 +286,7 @@ void Home::on_awal_tabBarClicked(int index)
             q.exec();
             model->setQuery(q);
             ui->viewinfo->setModel(model);
+            ui->viewinfo->horizontalHeader()->setStretchLastSection(true);
         }
     }else if(index==5){
         db = QSqlDatabase::addDatabase("QSQLITE");
@@ -262,6 +298,20 @@ void Home::on_awal_tabBarClicked(int index)
             q.exec();
             model->setQuery(q);
             ui->viewadmin->setModel(model);
+            ui->viewadmin->horizontalHeader()->setStretchLastSection(true);
+        }
+    }else if(index==6){
+        db = QSqlDatabase::addDatabase("QSQLITE");
+        db.setDatabaseName("D:/SteamLibrary/steamapps/Qt/db/mydb.db");
+        if(db.open()){
+            QSqlQuery q;
+            QSqlQueryModel *model = new QSqlQueryModel;
+            q.prepare("SELECT nim,nama,dosenp,perusahaan,waktupengajuan,upload,nilai FROM surat");
+            q.exec();
+            model->setQuery(q);
+            ui->nilaimahasiswa->setModel(model);
+            ui->nilaimahasiswa->horizontalHeader()->setStretchLastSection(true);
+            ui->nilaimahasiswa->setSelectionBehavior(QAbstractItemView::SelectRows);
         }
     }
 
@@ -651,8 +701,11 @@ void Home::on_save_clicked()
                 if(q.value(1).toString()==""){
                     ui->pengumuman->setText("Harap Melengkapi Data Diri Pada Profile Terlebih Dahulu");
                     ui->pengumuman->setHidden(true);
+                    ui->uploadlink->setHidden(true);
+
                 }else{
                     ui->pengumuman->setHidden(true);
+                    ui->uploadlink->setHidden(true);
                 }
 
             }
@@ -663,9 +716,11 @@ void Home::on_save_clicked()
 
                 if((q.value(8).toString() >= "01/7/"+year) && (q.value(8).toString() <= "31/12/"+year) ){
                     ui->tombolAwal->setText("Cetak");
+                    ui->uploadlink->setHidden(false);
     //                    qDebug() << "truee";
                 }else if((q.value(8).toString() >= "0/1/"+year) && (q.value(8).toString() <= "30/6/"+year)){
                     ui->tombolAwal->setText("Cetak");
+                    ui->uploadlink->setHidden(false);
     //                    qDebug() << "trueee";
                 }else{
     //                    qDebug() << "true";
@@ -674,11 +729,13 @@ void Home::on_save_clicked()
     //                    qDebug() << (q.value(8).toString() <= "31/12/"+year);
     //                    qDebug() << (q.value(8).toString() >= "01/7/"+year);
                     ui->tombolAwal->setText("Daftar KP");
+                    ui->uploadlink->setHidden(true);
                     ui->tombolAwal->setEnabled(true);
                 }
             }else{
                 ui->tombolAwal->setEnabled(true);
                 ui->tombolAwal->setText("Daftar KP");
+                ui->uploadlink->setHidden(true);
             }
         }
     }
@@ -704,7 +761,9 @@ void Home::on_awal_currentChanged(int index)
                     if(q.value(1).toString()==""){
                         ui->pengumuman->setText("Harap Melengkapi Data Diri Pada Profile Terlebih Dahulu");
                         ui->tombolAwal->setEnabled(false);
+                        ui->uploadlink->setHidden(true);
                     }else{
+                        ui->uploadlink->setHidden(true);
                         ui->pengumuman->setHidden(true);
                     }
 
@@ -716,9 +775,11 @@ void Home::on_awal_currentChanged(int index)
 
                     if((q.value(8).toString() >= "01/7/"+year) && (q.value(8).toString() <= "31/12/"+year) ){
                         ui->tombolAwal->setText("Cetak");
+                        ui->uploadlink->setHidden(false);
     //                    qDebug() << "truee";
                     }else if((q.value(8).toString() >= "0/1/"+year) && (q.value(8).toString() <= "30/6/"+year)){
                         ui->tombolAwal->setText("Cetak");
+                        ui->uploadlink->setHidden(false);
     //                    qDebug() << "trueee";
                     }else{
     //                    qDebug() << "true";
@@ -728,10 +789,15 @@ void Home::on_awal_currentChanged(int index)
     //                    qDebug() << (q.value(8).toString() >= "01/7/"+year);
                         ui->tombolAwal->setText("Daftar KP");
                         ui->tombolAwal->setEnabled(true);
+                        ui->uploadlink->setHidden(true);
                     }
                 }else{
-                    ui->tombolAwal->setEnabled(true);
+//                    ui->tombolAwal->setEnabled(false);
+//                    ui->uploadlink->setHidden(true);
+//                    ui->tombolAwal->setText("Anda Admin");
                     ui->tombolAwal->setText("Daftar KP");
+                    ui->tombolAwal->setEnabled(true);
+                    ui->uploadlink->setHidden(true);
                 }
             }
         }
@@ -797,6 +863,23 @@ void Home::on_awal_currentChanged(int index)
                 ui->sks->setValue(q.value(3).toInt());
 
             }
+
+            if(q.exec("select * from surat where nim='"+user+"'")){
+                int j = 0;
+                while(q.next()){
+                    if(!nilai.contains(q.value(8).toString())){
+                        nilai.append(q.value(8).toString());
+                        ui->nilainilai->addItem(q.value(8).toString() +" | "+ q.value(10).toString());
+                    }
+                    j++;
+
+                }
+                if(j==0){
+                    ui->nilainilai->addItem("Anda Belum Mempunyai Riwayat Nilai");
+                    ui->nilainilai->setDisabled(true);
+                }
+            }
+
             ui->save->setDisabled(true);
 
 
@@ -811,6 +894,7 @@ void Home::on_awal_currentChanged(int index)
             q.exec();
             model->setQuery(q);
             ui->viewinfo->setModel(model);
+            ui->viewinfo->horizontalHeader()->setStretchLastSection(true);
         }
     }else if(index==5){
         db = QSqlDatabase::addDatabase("QSQLITE");
@@ -822,6 +906,20 @@ void Home::on_awal_currentChanged(int index)
             q.exec();
             model->setQuery(q);
             ui->viewadmin->setModel(model);
+            ui->viewadmin->horizontalHeader()->setStretchLastSection(true);
+        }
+    }else if(index==6){
+        db = QSqlDatabase::addDatabase("QSQLITE");
+        db.setDatabaseName("D:/SteamLibrary/steamapps/Qt/db/mydb.db");
+        if(db.open()){
+            QSqlQuery q;
+            QSqlQueryModel *model = new QSqlQueryModel;
+            q.prepare("SELECT nim,nama,dosenp,perusahaan,waktupengajuan,upload,nilai FROM surat");
+            q.exec();
+            model->setQuery(q);
+            ui->nilaimahasiswa->setModel(model);
+            ui->nilaimahasiswa->horizontalHeader()->setStretchLastSection(true);
+            ui->nilaimahasiswa->setSelectionBehavior(QAbstractItemView::SelectRows);
         }
     }
 
@@ -843,7 +941,7 @@ void Home::on_tombolAwal_clicked()
             QString year =  QString::number(QDate::currentDate().year());
             if(q.exec("Select * from detail_mahasiswa where id_mhs='"+user+"'")){
                 if(q.next()){
-                    if(q.value(3).toInt()<84){
+                    if(q.value(3).toInt()<95){
                         QMessageBox::warning(this,"Warning","SKS Anda Tidak Memenuhi Syarat!");
                     }else{
     //                    qDebug() << "truee";
@@ -941,5 +1039,75 @@ void Home::on_tombolAwal_clicked()
             }
         }
     }
+}
+
+
+void Home::on_logout_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Logout");
+    msgBox.setIcon(QMessageBox::Information);
+    msgBox.setText("What do you want to logout?");
+    QPushButton *ok = msgBox.addButton(tr("Ok"), QMessageBox::ActionRole);
+    msgBox.setStandardButtons(QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Cancel);
+    msgBox.exec();
+
+    if(msgBox.clickedButton()==ok){
+                main = new MainWindow();
+                this->hide();
+                this->close();
+                main->show();
+    }else{
+        msgBox.close();
+    }
+}
+
+
+void Home::on_uploadlink_clicked()
+{
+    UploadLink uploadlink;
+    uploadlink.setData(user);
+    uploadlink.exec();
+}
+
+
+void Home::on_carimahasiswa_textChanged(const QString &arg1)
+{
+    QString cari = arg1;
+    qDebug() << cari;
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("D:/SteamLibrary/steamapps/Qt/db/mydb.db");
+    if(db.open()){
+        QSqlQuery q;
+        QSqlQueryModel *model = new QSqlQueryModel;
+        q.prepare("SELECT nim,nama,dosenp,perusahaan,waktupengajuan,upload,nilai from surat where nim like '%"+cari+"%'");
+        q.exec();
+        model->setQuery(q);
+        ui->nilaimahasiswa->setModel(model);
+        ui->nilaimahasiswa->horizontalHeader()->setStretchLastSection(true);
+    }
+}
+
+
+void Home::on_nilaimahasiswa_doubleClicked(const QModelIndex &index)
+{
+//    QAbstractTableModel *model;
+//    qDebug() << index.column();
+    int kolomtanggal = 4;
+    int kolomnim = 0;
+    int baris = index.row();
+    QModelIndex nimmhs  = index.sibling(baris,kolomnim);
+    QModelIndex tanggal = index.sibling(baris,kolomtanggal);
+//    qDebug() << index.model()->data(test,0);
+    QString datanim = index.model()->data(nimmhs,0).toString();
+    QString datatanggal = index.model()->data(tanggal,0).toString();
+    QList<QString> data ;
+    data.append(datanim);
+    data.append(datatanggal);
+
+    AddNilai nilai;
+    nilai.setData(data);
+    nilai.exec();
 }
 
