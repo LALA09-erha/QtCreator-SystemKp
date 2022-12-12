@@ -11,7 +11,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Edit Info</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 85, 255);
+color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
@@ -26,6 +31,9 @@
     <font>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Edit Info</string>
@@ -48,6 +56,9 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
          <string>Info</string>
         </property>
@@ -58,6 +69,9 @@
       </item>
       <item>
        <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
          <string>Label</string>
         </property>
@@ -71,10 +85,23 @@
        <number>30</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="info"/>
+       <widget class="QLineEdit" name="info">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="placeholderText">
+         <string>Masukkan Info</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="opsilabel"/>
+       <widget class="QComboBox" name="opsilabel">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -105,6 +132,9 @@
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QPushButton" name="update">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Update</string>
       </property>
@@ -115,6 +145,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="cancel">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Cancel</string>
       </property>

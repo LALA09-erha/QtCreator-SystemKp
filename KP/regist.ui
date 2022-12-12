@@ -17,6 +17,9 @@
    <iconset>
     <normaloff>../../../../SteamLibrary/steamapps/Qt/db/login_2019_logo_black.png</normaloff>../../../../SteamLibrary/steamapps/Qt/db/login_2019_logo_black.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 85, 255);</string>
+  </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
@@ -39,6 +42,9 @@
        <font>
         <pointsize>30</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Registrasi</string>
@@ -63,6 +69,9 @@
             <height>100</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Username</string>
           </property>
@@ -78,6 +87,9 @@
             <width>16777215</width>
             <height>100</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
           </property>
           <property name="text">
            <string>Password</string>
@@ -96,6 +108,9 @@
         </property>
         <item>
          <widget class="QLineEdit" name="username">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="placeholderText">
            <string>Masukkan NIM Anda</string>
           </property>
@@ -103,6 +118,9 @@
         </item>
         <item>
          <widget class="QLineEdit" name="password">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="echoMode">
            <enum>QLineEdit::Password</enum>
           </property>
@@ -117,6 +135,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="regist">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Registrasi</string>
       </property>
@@ -132,6 +153,9 @@
      <width>71</width>
      <height>27</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Login</string>

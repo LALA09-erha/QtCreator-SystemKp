@@ -30,7 +30,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QToolButton *toolButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_3;
     QLabel *label;
     QHBoxLayout *horizontalLayout;
@@ -52,6 +52,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8("../../../../SteamLibrary/steamapps/Qt/db/login_2019_logo_black.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 85, 255);"));
         MainWindow->setToolButtonStyle(Qt::ToolButtonFollowStyle);
         MainWindow->setTabShape(QTabWidget::Rounded);
         centralwidget = new QWidget(MainWindow);
@@ -59,22 +60,24 @@ public:
         toolButton = new QToolButton(centralwidget);
         toolButton->setObjectName("toolButton");
         toolButton->setGeometry(QRect(190, 270, 91, 27));
+        toolButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         toolButton->setPopupMode(QToolButton::DelayedPopup);
         toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         toolButton->setAutoRaise(false);
         toolButton->setArrowType(Qt::RightArrow);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(20, -40, 421, 301));
-        verticalLayout_3 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(20, -40, 421, 301));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName("label");
         label->setMaximumSize(QSize(16777215, 69));
         QFont font;
         font.setPointSize(30);
         label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(label);
@@ -84,15 +87,17 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(28);
         verticalLayout_2->setObjectName("verticalLayout_2");
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName("label_2");
         label_2->setMaximumSize(QSize(16777215, 100));
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(label_2);
 
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName("label_3");
         label_3->setMaximumSize(QSize(16777215, 100));
+        label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(label_3);
 
@@ -102,13 +107,17 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(30);
         verticalLayout->setObjectName("verticalLayout");
-        username = new QLineEdit(widget);
+        username = new QLineEdit(layoutWidget);
         username->setObjectName("username");
+        username->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 0);\n"
+"color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(username);
 
-        password = new QLineEdit(widget);
+        password = new QLineEdit(layoutWidget);
         password->setObjectName("password");
+        password->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 0);\n"
+"color: rgb(255, 255, 255);"));
         password->setEchoMode(QLineEdit::Password);
 
         verticalLayout->addWidget(password);
@@ -119,8 +128,9 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName("pushButton");
+        pushButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(pushButton);
 

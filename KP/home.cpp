@@ -96,10 +96,15 @@ void Home::setData(const QString &labelText){
                 ui->awal->setTabVisible(3,false);
                 ui->awal->setTabEnabled(3,false);
                 ui->pengumuman->setText("Anda Masuk Sebagai Admin");
+                ui->viewadmin->setStyleSheet("QHeaderView::section { background-color:black;color:white }");
+                ui->viewinfo->setStyleSheet("QHeaderView::section { background-color:black;color:white }");
+                ui->nilaimahasiswa->setStyleSheet("QHeaderView::section { background-color:black;color:white }");
                 ui->tombolAwal->setText("Anda Admin");
                 ui->tombolAwal->setEnabled(false);
             }
         }else{
+             ui->tview->setStyleSheet("QHeaderView::section { background-color:black;color:white }");
+             ui->ttview->setStyleSheet("QHeaderView::section { background-color:black;color:white }");
              ui->awal->setTabVisible(4,false);
              ui->awal->setTabEnabled(4,false);
              ui->awal->setTabEnabled(5,false);

@@ -45,6 +45,8 @@ public:
         if (AddInfo->objectName().isEmpty())
             AddInfo->setObjectName("AddInfo");
         AddInfo->resize(400, 300);
+        AddInfo->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);background-color: rgb(85, 85, 255);"));
         layoutWidget = new QWidget(AddInfo);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(300, 40, 85, 67));
@@ -91,11 +93,15 @@ public:
         verticalLayout_2->setObjectName("verticalLayout_2");
         info = new QLineEdit(layoutWidget_2);
         info->setObjectName("info");
+        info->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(info);
 
         opsilabel = new QComboBox(layoutWidget_2);
         opsilabel->setObjectName("opsilabel");
+        opsilabel->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(opsilabel);
 
@@ -120,12 +126,13 @@ public:
 
     void retranslateUi(QDialog *AddInfo)
     {
-        AddInfo->setWindowTitle(QCoreApplication::translate("AddInfo", "Dialog", nullptr));
+        AddInfo->setWindowTitle(QCoreApplication::translate("AddInfo", "Add Info", nullptr));
         add->setText(QCoreApplication::translate("AddInfo", "Add", nullptr));
         cancel->setText(QCoreApplication::translate("AddInfo", "Cancel", nullptr));
         index->setText(QString());
         label->setText(QCoreApplication::translate("AddInfo", "Info", nullptr));
         label_2->setText(QCoreApplication::translate("AddInfo", "Label", nullptr));
+        info->setPlaceholderText(QCoreApplication::translate("AddInfo", "Masukkan Info", nullptr));
         label_4->setText(QCoreApplication::translate("AddInfo", "Add Info", nullptr));
     } // retranslateUi
 

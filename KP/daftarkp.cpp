@@ -68,7 +68,8 @@ void DaftarKp::on_Tdaftar_clicked()
 
             if(db.open()){
                 QSqlQuery q;
-                if(q.exec("insert into surat values('"+nim+"','"+nama+"','"+jurusan+"','"+dosen+"','"+perusahaan+"','"+judul+"','"+tmulai+"','"+takhir+"','"+ timestamp.toString("dd/MM/yyyy")+"')")){
+//                qDebug() << ;
+                if(q.exec("insert into surat values('"+nim+"','"+nama+"','"+jurusan+"','"+dosen+"','"+perusahaan+"','"+judul+"','"+tmulai+"','"+takhir+"','"+ timestamp.toString("dd/MM/yyyy")+"','','')")){
                     QMessageBox::information(this,"Info","Pendaftaran Berhasil");
                     Home home;
                     home.setData(nim);
@@ -76,6 +77,15 @@ void DaftarKp::on_Tdaftar_clicked()
                     this->close();
                 }else{
                     QMessageBox::information(this,"Info","Pendaftaran Gagal!");
+//                    qDebug() << nim;
+//                    qDebug() << nama;
+//                    qDebug() << jurusan;
+//                    qDebug() << dosen;
+//                    qDebug() << perusahaan;
+//                    qDebug() << judul;
+//                    qDebug() << tmulai;
+//                    qDebug() << takhir;
+//                    qDebug() << timestamp.toString("dd/MM/yyyy");
                     this->hide();
                     this->close();
                 }

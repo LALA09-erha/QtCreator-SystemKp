@@ -41,6 +41,9 @@ public:
         if (AddNilai->objectName().isEmpty())
             AddNilai->setObjectName("AddNilai");
         AddNilai->resize(400, 300);
+        AddNilai->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(85, 85, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         horizontalLayout_3 = new QHBoxLayout(AddNilai);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         verticalLayout_3 = new QVBoxLayout();
@@ -54,12 +57,16 @@ public:
         QFont font;
         font.setPointSize(25);
         label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         label->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label);
 
         nim = new QLabel(AddNilai);
         nim->setObjectName("nim");
+        nim->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         nim->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(nim);
@@ -71,11 +78,16 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         label_2 = new QLabel(AddNilai);
         label_2->setObjectName("label_2");
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(label_2);
 
         nilai = new QSpinBox(AddNilai);
         nilai->setObjectName("nilai");
+        nilai->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"border-right-color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(nilai);
 
@@ -89,11 +101,15 @@ public:
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         pushButton = new QPushButton(AddNilai);
         pushButton->setObjectName("pushButton");
+        pushButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         horizontalLayout_2->addWidget(pushButton);
 
         pushButton_2 = new QPushButton(AddNilai);
         pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         horizontalLayout_2->addWidget(pushButton_2);
 
@@ -111,7 +127,7 @@ public:
 
     void retranslateUi(QDialog *AddNilai)
     {
-        AddNilai->setWindowTitle(QCoreApplication::translate("AddNilai", "Dialog", nullptr));
+        AddNilai->setWindowTitle(QCoreApplication::translate("AddNilai", "Insert Nilai", nullptr));
         label->setText(QCoreApplication::translate("AddNilai", "Insert Nilai", nullptr));
         nim->setText(QCoreApplication::translate("AddNilai", "Insert Nilai", nullptr));
         label_2->setText(QCoreApplication::translate("AddNilai", "Nilai", nullptr));

@@ -100,6 +100,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8("../../../../SteamLibrary/steamapps/Qt/db/home-house-main-page-building-address-location-1-2618.png"), QSize(), QIcon::Normal, QIcon::Off);
         Home->setWindowIcon(icon);
+        Home->setStyleSheet(QString::fromUtf8("background-color: rgb(88, 110, 255);"));
         verticalLayout_11 = new QVBoxLayout(Home);
         verticalLayout_11->setObjectName("verticalLayout_11");
         awal = new QTabWidget(Home);
@@ -119,6 +120,7 @@ public:
         id_user->setObjectName("id_user");
         id_user->setGeometry(QRect(240, 70, 200, 100));
         id_user->setMaximumSize(QSize(200, 100));
+        id_user->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         id_user->setAlignment(Qt::AlignCenter);
         tombolAwal = new QPushButton(main);
         tombolAwal->setObjectName("tombolAwal");
@@ -129,10 +131,12 @@ public:
         font1.setPointSize(11);
         font1.setBold(false);
         tombolAwal->setFont(font1);
+        tombolAwal->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         tombolAwal->setIconSize(QSize(50, 50));
         pengumuman = new QLabel(main);
         pengumuman->setObjectName("pengumuman");
         pengumuman->setGeometry(QRect(130, 350, 421, 20));
+        pengumuman->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         pengumuman->setAlignment(Qt::AlignCenter);
         layoutWidget = new QWidget(main);
         layoutWidget->setObjectName("layoutWidget");
@@ -142,11 +146,13 @@ public:
         verticalLayout_10->setContentsMargins(0, 0, 0, 0);
         uploadlink = new QPushButton(layoutWidget);
         uploadlink->setObjectName("uploadlink");
+        uploadlink->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_10->addWidget(uploadlink);
 
         logout = new QPushButton(layoutWidget);
         logout->setObjectName("logout");
+        logout->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_10->addWidget(logout);
 
@@ -159,12 +165,14 @@ public:
         verticalLayout_4->setObjectName("verticalLayout_4");
         label_6 = new QLabel(info);
         label_6->setObjectName("label_6");
+        label_6->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_6->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(label_6);
 
         tview = new QTableView(info);
         tview->setObjectName("tview");
+        tview->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);selection-color: rgb(85, 0, 255);"));
 
         verticalLayout_4->addWidget(tview);
 
@@ -182,12 +190,14 @@ public:
         verticalLayout_9->setObjectName("verticalLayout_9");
         label_7 = new QLabel(alur);
         label_7->setObjectName("label_7");
+        label_7->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_7->setAlignment(Qt::AlignCenter);
 
         verticalLayout_9->addWidget(label_7);
 
         ttview = new QTableView(alur);
         ttview->setObjectName("ttview");
+        ttview->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);selection-color: rgb(85, 0, 255);"));
 
         verticalLayout_9->addWidget(ttview);
 
@@ -212,6 +222,7 @@ public:
         font2.setPointSize(25);
         font2.setBold(false);
         profile_2->setFont(font2);
+        profile_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);selection-color: rgb(85, 0, 255);"));
         profile_2->setAlignment(Qt::AlignCenter);
 
         verticalLayout_7->addWidget(profile_2);
@@ -230,36 +241,42 @@ public:
         verticalLayout_5->setContentsMargins(-1, 0, -1, 0);
         label_2 = new QLabel(layoutWidget1);
         label_2->setObjectName("label_2");
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_2->setIndent(-1);
 
         verticalLayout_5->addWidget(label_2);
 
         label_3 = new QLabel(layoutWidget1);
         label_3->setObjectName("label_3");
+        label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_3->setIndent(-1);
 
         verticalLayout_5->addWidget(label_3);
 
         label = new QLabel(layoutWidget1);
         label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label->setIndent(-1);
 
         verticalLayout_5->addWidget(label);
 
         label_4 = new QLabel(layoutWidget1);
         label_4->setObjectName("label_4");
+        label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_4->setIndent(-1);
 
         verticalLayout_5->addWidget(label_4);
 
         label_5 = new QLabel(layoutWidget1);
         label_5->setObjectName("label_5");
+        label_5->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_5->setIndent(-1);
 
         verticalLayout_5->addWidget(label_5);
 
         label_8 = new QLabel(layoutWidget1);
         label_8->setObjectName("label_8");
+        label_8->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_5->addWidget(label_8);
 
@@ -271,32 +288,42 @@ public:
         verticalLayout_6->setObjectName("verticalLayout_6");
         username_user = new QLineEdit(layoutWidget1);
         username_user->setObjectName("username_user");
+        username_user->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_6->addWidget(username_user);
 
         password_user = new QLineEdit(layoutWidget1);
         password_user->setObjectName("password_user");
+        password_user->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         password_user->setEchoMode(QLineEdit::Password);
 
         verticalLayout_6->addWidget(password_user);
 
         nama_user = new QLineEdit(layoutWidget1);
         nama_user->setObjectName("nama_user");
+        nama_user->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_6->addWidget(nama_user);
 
         alamat_user = new QLineEdit(layoutWidget1);
         alamat_user->setObjectName("alamat_user");
+        alamat_user->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_6->addWidget(alamat_user);
 
         sks = new QSpinBox(layoutWidget1);
         sks->setObjectName("sks");
+        sks->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_6->addWidget(sks);
 
         nilainilai = new QComboBox(layoutWidget1);
         nilainilai->setObjectName("nilainilai");
+        nilainilai->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_6->addWidget(nilainilai);
 
@@ -308,6 +335,7 @@ public:
 
         save = new QPushButton(layoutWidget1);
         save->setObjectName("save");
+        save->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_7->addWidget(save);
 
@@ -319,6 +347,9 @@ public:
         viewinfo = new QTableView(Info);
         viewinfo->setObjectName("viewinfo");
         viewinfo->setGeometry(QRect(0, 0, 561, 491));
+        viewinfo->setStyleSheet(QString::fromUtf8("selection-color: rgb(255, 255, 255);\n"
+"gridline-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 252, 224);border-top-color: rgb(85, 170, 255);"));
         layoutWidget2 = new QWidget(Info);
         layoutWidget2->setObjectName("layoutWidget2");
         layoutWidget2->setGeometry(QRect(560, 0, 104, 153));
@@ -330,11 +361,14 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         pushButton_2 = new QPushButton(layoutWidget2);
         pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(pushButton_2);
 
         refr = new QPushButton(layoutWidget2);
         refr->setObjectName("refr");
+        refr->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(refr);
 
@@ -353,6 +387,10 @@ public:
         viewadmin = new QTableView(admin);
         viewadmin->setObjectName("viewadmin");
         viewadmin->setGeometry(QRect(0, 0, 561, 491));
+        viewadmin->setStyleSheet(QString::fromUtf8("selection-color: rgb(255, 255, 255);\n"
+"gridline-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 252, 224);\n"
+"border-top-color: rgb(85, 170, 255);"));
         layoutWidget3 = new QWidget(admin);
         layoutWidget3->setObjectName("layoutWidget3");
         layoutWidget3->setGeometry(QRect(560, 0, 111, 128));
@@ -364,11 +402,15 @@ public:
         addadmin = new QPushButton(layoutWidget3);
         addadmin->setObjectName("addadmin");
         addadmin->setMaximumSize(QSize(16777215, 16777215));
+        addadmin->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(addadmin);
 
         refradmin = new QPushButton(layoutWidget3);
         refradmin->setObjectName("refradmin");
+        refradmin->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(refradmin);
 
@@ -385,11 +427,16 @@ public:
         verticalLayout_12->setObjectName("verticalLayout_12");
         carimahasiswa = new QLineEdit(nilai);
         carimahasiswa->setObjectName("carimahasiswa");
+        carimahasiswa->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_12->addWidget(carimahasiswa);
 
         nilaimahasiswa = new QTableView(nilai);
         nilaimahasiswa->setObjectName("nilaimahasiswa");
+        nilaimahasiswa->setStyleSheet(QString::fromUtf8("color: rgb(255, 252, 224);\n"
+"selection-color: rgb(255, 255, 255);\n"
+"gridline-color: rgb(0, 0, 0);\n"
+"border-top-color: rgb(85, 170, 255);"));
 
         verticalLayout_12->addWidget(nilaimahasiswa);
 
@@ -409,7 +456,7 @@ public:
 
         retranslateUi(Home);
 
-        awal->setCurrentIndex(6);
+        awal->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Home);

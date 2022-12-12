@@ -47,6 +47,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8("../../../../SteamLibrary/steamapps/Qt/db/login_2019_logo_black.png"), QSize(), QIcon::Normal, QIcon::Off);
         Regist->setWindowIcon(icon);
+        Regist->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 85, 255);"));
         layoutWidget = new QWidget(Regist);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(20, -10, 421, 301));
@@ -59,6 +60,7 @@ public:
         QFont font;
         font.setPointSize(30);
         label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(label);
@@ -71,12 +73,14 @@ public:
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName("label_2");
         label_2->setMaximumSize(QSize(16777215, 100));
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(label_2);
 
         label_3 = new QLabel(layoutWidget);
         label_3->setObjectName("label_3");
         label_3->setMaximumSize(QSize(16777215, 100));
+        label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_2->addWidget(label_3);
 
@@ -88,11 +92,13 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         username = new QLineEdit(layoutWidget);
         username->setObjectName("username");
+        username->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(username);
 
         password = new QLineEdit(layoutWidget);
         password->setObjectName("password");
+        password->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         password->setEchoMode(QLineEdit::Password);
 
         verticalLayout->addWidget(password);
@@ -105,12 +111,14 @@ public:
 
         regist = new QPushButton(layoutWidget);
         regist->setObjectName("regist");
+        regist->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout_3->addWidget(regist);
 
         toolButton = new QToolButton(Regist);
         toolButton->setObjectName("toolButton");
         toolButton->setGeometry(QRect(200, 300, 71, 27));
+        toolButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         toolButton->setPopupMode(QToolButton::DelayedPopup);
         toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         toolButton->setAutoRaise(false);

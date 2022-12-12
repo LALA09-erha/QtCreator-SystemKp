@@ -17,6 +17,9 @@
    <iconset>
     <normaloff>../../../../SteamLibrary/steamapps/Qt/db/home-house-main-page-building-address-location-1-2618.png</normaloff>../../../../SteamLibrary/steamapps/Qt/db/home-house-main-page-building-address-location-1-2618.png</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(88, 110, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_11">
    <item>
     <widget class="QTabWidget" name="awal">
@@ -36,7 +39,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>6</number>
+      <number>0</number>
      </property>
      <property name="iconSize">
       <size>
@@ -76,6 +79,9 @@
          <height>100</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
        <property name="text">
         <string>Sistem Informasi KP</string>
        </property>
@@ -107,6 +113,9 @@
          <bold>false</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
        <property name="text">
         <string>CommandLinkButton</string>
        </property>
@@ -125,6 +134,9 @@
          <width>421</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>TextLabel</string>
@@ -145,6 +157,9 @@
        <layout class="QVBoxLayout" name="verticalLayout_10">
         <item>
          <widget class="QPushButton" name="uploadlink">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Upload Link</string>
           </property>
@@ -152,6 +167,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="logout">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Logout</string>
           </property>
@@ -173,6 +191,9 @@
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
           <widget class="QLabel" name="label_6">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>Informasi Terkait Syarat Pendaftaran Kp</string>
            </property>
@@ -182,7 +203,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QTableView" name="tview"/>
+          <widget class="QTableView" name="tview">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);selection-color: rgb(85, 0, 255);</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -201,6 +226,9 @@
         <layout class="QVBoxLayout" name="verticalLayout_9">
          <item>
           <widget class="QLabel" name="label_7">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>Informasi Terkait Alur Pendaftaran KP</string>
            </property>
@@ -210,7 +238,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QTableView" name="ttview"/>
+          <widget class="QTableView" name="ttview">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);selection-color: rgb(85, 0, 255);</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -245,6 +277,9 @@
             <bold>false</bold>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);selection-color: rgb(85, 0, 255);</string>
+          </property>
           <property name="text">
            <string>PROFILE</string>
           </property>
@@ -278,6 +313,9 @@
             </property>
             <item>
              <widget class="QLabel" name="label_2">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Username</string>
               </property>
@@ -291,6 +329,9 @@
             </item>
             <item>
              <widget class="QLabel" name="label_3">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Password</string>
               </property>
@@ -304,6 +345,9 @@
             </item>
             <item>
              <widget class="QLabel" name="label">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Nama</string>
               </property>
@@ -317,6 +361,9 @@
             </item>
             <item>
              <widget class="QLabel" name="label_4">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Alamat</string>
               </property>
@@ -330,6 +377,9 @@
             </item>
             <item>
              <widget class="QLabel" name="label_5">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Total SKS</string>
               </property>
@@ -343,6 +393,9 @@
             </item>
             <item>
              <widget class="QLabel" name="label_8">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
               <property name="text">
                <string>Nilai KP</string>
               </property>
@@ -356,26 +409,53 @@
              <number>5</number>
             </property>
             <item>
-             <widget class="QLineEdit" name="username_user"/>
+             <widget class="QLineEdit" name="username_user">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+              </property>
+             </widget>
             </item>
             <item>
              <widget class="QLineEdit" name="password_user">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+              </property>
               <property name="echoMode">
                <enum>QLineEdit::Password</enum>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="nama_user"/>
+             <widget class="QLineEdit" name="nama_user">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+              </property>
+             </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="alamat_user"/>
+             <widget class="QLineEdit" name="alamat_user">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+              </property>
+             </widget>
             </item>
             <item>
-             <widget class="QSpinBox" name="sks"/>
+             <widget class="QSpinBox" name="sks">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+             </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="nilainilai"/>
+             <widget class="QComboBox" name="nilainilai">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -383,6 +463,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="save">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Save</string>
           </property>
@@ -408,6 +491,11 @@
          <height>491</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">selection-color: rgb(255, 255, 255);
+gridline-color: rgb(0, 0, 0);
+color: rgb(255, 252, 224);border-top-color: rgb(85, 170, 255);</string>
+       </property>
       </widget>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
@@ -426,6 +514,9 @@
           </property>
           <item>
            <widget class="QPushButton" name="pushButton_2">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);</string>
+            </property>
             <property name="text">
              <string>Add Info</string>
             </property>
@@ -433,6 +524,10 @@
           </item>
           <item>
            <widget class="QPushButton" name="refr">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+            </property>
             <property name="text">
              <string>refresh</string>
             </property>
@@ -473,6 +568,12 @@
          <height>491</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">selection-color: rgb(255, 255, 255);
+gridline-color: rgb(0, 0, 0);
+color: rgb(255, 252, 224);
+border-top-color: rgb(85, 170, 255);</string>
+       </property>
       </widget>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
@@ -498,6 +599,10 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>Add Admin</string>
           </property>
@@ -505,6 +610,10 @@
         </item>
         <item>
          <widget class="QPushButton" name="refradmin">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>refresh</string>
           </property>
@@ -537,13 +646,23 @@
       <layout class="QVBoxLayout" name="verticalLayout_12">
        <item>
         <widget class="QLineEdit" name="carimahasiswa">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
          <property name="placeholderText">
           <string>Cari Mahasiswa Berdasarkan NIM</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QTableView" name="nilaimahasiswa"/>
+        <widget class="QTableView" name="nilaimahasiswa">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 252, 224);
+selection-color: rgb(255, 255, 255);
+gridline-color: rgb(0, 0, 0);
+border-top-color: rgb(85, 170, 255);</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

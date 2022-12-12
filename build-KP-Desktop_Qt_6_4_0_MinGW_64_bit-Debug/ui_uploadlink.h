@@ -39,12 +39,17 @@ public:
         if (UploadLink->objectName().isEmpty())
             UploadLink->setObjectName("UploadLink");
         UploadLink->resize(374, 278);
+        UploadLink->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 85, 255);color: rgb(255, 255, 255);"));
         cancel = new QPushButton(UploadLink);
         cancel->setObjectName("cancel");
         cancel->setGeometry(QRect(278, 49, 83, 29));
+        cancel->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         upload = new QPushButton(UploadLink);
         upload->setObjectName("upload");
         upload->setGeometry(QRect(278, 13, 83, 29));
+        upload->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         layoutWidget = new QWidget(UploadLink);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(12, 12, 279, 254));
@@ -89,7 +94,7 @@ public:
 
     void retranslateUi(QDialog *UploadLink)
     {
-        UploadLink->setWindowTitle(QCoreApplication::translate("UploadLink", "Dialog", nullptr));
+        UploadLink->setWindowTitle(QCoreApplication::translate("UploadLink", "Pengumpulan Link", nullptr));
         cancel->setText(QCoreApplication::translate("UploadLink", "Cancel", nullptr));
         upload->setText(QCoreApplication::translate("UploadLink", "Upload", nullptr));
         label->setText(QCoreApplication::translate("UploadLink", "Format Pengumpulan", nullptr));

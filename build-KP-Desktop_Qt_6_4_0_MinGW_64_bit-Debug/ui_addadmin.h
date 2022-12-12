@@ -43,6 +43,9 @@ public:
         if (AddAdmin->objectName().isEmpty())
             AddAdmin->setObjectName("AddAdmin");
         AddAdmin->resize(400, 300);
+        AddAdmin->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"background-color: rgb(85, 85, 255);"));
         layoutWidget = new QWidget(AddAdmin);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(10, 40, 281, 211));
@@ -69,11 +72,15 @@ public:
         verticalLayout_5->setObjectName("verticalLayout_5");
         username = new QLineEdit(layoutWidget);
         username->setObjectName("username");
+        username->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_5->addWidget(username);
 
         password = new QLineEdit(layoutWidget);
         password->setObjectName("password");
+        password->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         password->setEchoMode(QLineEdit::Password);
 
         verticalLayout_5->addWidget(password);
@@ -96,12 +103,16 @@ public:
         verticalLayout_6->setContentsMargins(0, 0, 0, 0);
         add_admin = new QPushButton(layoutWidget_2);
         add_admin->setObjectName("add_admin");
+        add_admin->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
         add_admin->setCheckable(false);
 
         verticalLayout_6->addWidget(add_admin);
 
         cancel_2 = new QPushButton(layoutWidget_2);
         cancel_2->setObjectName("cancel_2");
+        cancel_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);"));
 
         verticalLayout_6->addWidget(cancel_2);
 
@@ -115,9 +126,11 @@ public:
 
     void retranslateUi(QDialog *AddAdmin)
     {
-        AddAdmin->setWindowTitle(QCoreApplication::translate("AddAdmin", "Dialog", nullptr));
+        AddAdmin->setWindowTitle(QCoreApplication::translate("AddAdmin", "Add Admin", nullptr));
         label_3->setText(QCoreApplication::translate("AddAdmin", "Username", nullptr));
         label_4->setText(QCoreApplication::translate("AddAdmin", "Password", nullptr));
+        username->setPlaceholderText(QCoreApplication::translate("AddAdmin", "Masukkan Username", nullptr));
+        password->setPlaceholderText(QCoreApplication::translate("AddAdmin", "Masukkan Password", nullptr));
         label_5->setText(QCoreApplication::translate("AddAdmin", "Add Admin", nullptr));
         add_admin->setText(QCoreApplication::translate("AddAdmin", "Add", nullptr));
         cancel_2->setText(QCoreApplication::translate("AddAdmin", "Cancel", nullptr));

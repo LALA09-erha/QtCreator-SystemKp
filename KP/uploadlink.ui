@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Pengumpulan Link</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 85, 255);color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QPushButton" name="cancel">
    <property name="geometry">
@@ -21,6 +24,10 @@
      <width>83</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Cancel</string>
@@ -34,6 +41,10 @@
      <width>83</width>
      <height>29</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Upload</string>

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Add Info</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);background-color: rgb(85, 85, 255);</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -92,10 +96,23 @@
        <number>30</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="info"/>
+       <widget class="QLineEdit" name="info">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="placeholderText">
+         <string>Masukkan Info</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="opsilabel"/>
+       <widget class="QComboBox" name="opsilabel">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

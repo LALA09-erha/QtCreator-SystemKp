@@ -19,6 +19,7 @@ void AddNilai::setData(const QList<QString> &user){
     ui->nim->setText(user[0]);
     userr = user[0];
     tanggal = user[1];
+    ui->nilai->setMaximum(100);
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("D:/SteamLibrary/steamapps/Qt/db/mydb.db");
     if(db.open()){
@@ -45,7 +46,7 @@ void AddNilai::on_pushButton_clicked()
         QSqlQuery q;
         q.exec("select nilai from surat where nim='"+userr+"' and waktupengajuan='"+tanggal+"'");
         if(q.next()){
-            qDebug() << q.value(0);
+//            qDebug() << q.value(0);
             if(nilai == q.value(0).toString()){
                 QMessageBox::information(this,"Info","Nilai Tidak Berubah");
                 this->hide();
@@ -58,5 +59,12 @@ void AddNilai::on_pushButton_clicked()
             }
         }
     }
+}
+
+
+void AddNilai::on_pushButton_2_clicked()
+{
+    this->hide();
+    this->close();
 }
 
